@@ -3,24 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TipCalculator.MainPage">
 
-    <VerticalStackLayout>
-        <Label Text="Total da conta"/>
-        <Entry x:Name="billInput" Placeholder="Insira o valor" Keyboard="Numeric"/>
-        <Label Text="Tip"   />
-        <Label x:Name="tipOutput" Text="0.00" />
+    <VerticalStackLayout Padding="40" Spacing="10">
 
-        <Label Text="Total" />
-        <Label x:Name="totalOutput" Text="0.00" />
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Conta" WidthRequest="100" VerticalOptions="Center" />
+            <Entry x:Name="billInput" Placeholder="Enter Amount" Keyboard="Numeric" />
+        </HorizontalStackLayout>
 
-        <Label Text="Porcentagem de gorjeta" />
-        <Label x:Name="tipPercent" Text="15%" />
-        <Slider x:Name="tipPercentSlider" Minimum="0" Maximum="100" Value="15"/>
+        <HorizontalStackLayout Margin="0,20,0,0" Spacing="10">
+            <Label Text="Tip"  WidthRequest="100" />
+            <Label x:Name="tipOutput" Text="0.00" />
+        </HorizontalStackLayout>
 
-        <Button Text="15%" Clicked="OnNormalTip" />
-        <Button Text="20%" Clicked="OnGenerousTip" />
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Total" WidthRequest="100"/>
+            <Label x:Name="totalOutput" Text="0.00" />
+        </HorizontalStackLayout>
 
-        <Button x:Name="roundDown" Text="Round Down" />
-        <Button x:Name="roundUp"   Text="Round Up" />
+        <HorizontalStackLayout VerticalOptions="End" Spacing="10">
+            <Label Text="Percentual de gorjeta" WidthRequest="100"/>
+            <Label x:Name="tipPercent" Text="15%" />
+        </HorizontalStackLayout>
+
+        <Slider x:Name="tipPercentSlider" Minimum="0" Maximum="100" Value="15" />
+
+        <HorizontalStackLayout Margin="0,20,0,0" Spacing="10">
+            <Button Text="15%" Clicked="OnNormalTip" WidthRequest="150" HorizontalOptions="Center"/>
+            <Button Text="20%" Clicked="OnGenerousTip"  WidthRequest="150" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Margin="0,20,0,0" Spacing="10">
+            <Button x:Name="roundDown" Text="Arredondar para cima" WidthRequest="150" HorizontalOptions="Center"/>
+            <Button x:Name="roundUp"   Text="Arredondar para baixo" WidthRequest="150" HorizontalOptions="Center"/>
+        </HorizontalStackLayout>
+
     </VerticalStackLayout>
 
 </ContentPage>
